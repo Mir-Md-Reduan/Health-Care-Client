@@ -1,5 +1,9 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import img1 from '../../Images/Carosel/carousel-1.jpg'
+import img2 from '../../Images/Carosel/carousel-2.jpg'
+import img3 from '../../Images/Carosel/carousel-3.jpg'
+import './Banner.css'
 
 const Banner = () => {
     return (
@@ -9,37 +13,37 @@ const Banner = () => {
                     <div>
                         <img
                             className="d-block w-100"
-                            src="https://s3.amazonaws.com/images.teladoc.com/www/2019/landing-pages/bdstart/teladoc-lp-hero-img-m.jpg"
+                            src={img1}
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h1 className="text-info">When you need answers, Best Doctors can help.</h1>
-                            <p className="text-light">Get an Expert Medical Opinion from one of our world-renowned specialists so you can have the answers and confidence to make informed decisions about your health.</p>
+                            <h2 className="carousel-title">CARING FOR LIFE</h2>
+                            <p className="carousel-description">Leading the Way in Medical Excellence</p>
                         </Carousel.Caption>
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://cdn.pixabay.com/photo/2017/01/31/22/32/boy-2027768__340.png"
+                        src={img2}
                         alt="Second slide"
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h2 className="carousel-title">COMMITED TO YOUR HEALTH</h2>
+                        <p className="carousel-description">Leading the Way in Medical Excellence</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="holder.js/800x400?text=Third slide&bg=20232a"
+                        src={img3}
                         alt="Third slide"
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h2 className="carousel-title">PROFESSIONAL HEALTH CARE</h2>
+                        <p className="carousel-description">Leading the Way in Medical Excellence</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
