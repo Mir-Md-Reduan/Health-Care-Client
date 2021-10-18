@@ -6,7 +6,7 @@ import icon from '../../../Images/icon.png'
 const Header = () => {
     return (
         <div>
-            <Navbar bg="light" expand="lg" sticky="top">
+            <Navbar bg="light" expand="lg" fixed="top" >
                 <Container>
                     <div href="#home" className="d-flex justify-content-center align-items-center"><img height="25px" width="25px" src={icon} alt="Icon" />&nbsp;Medicare</div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
