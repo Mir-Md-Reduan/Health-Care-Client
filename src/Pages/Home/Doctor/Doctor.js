@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Doctor = (props) => {
-    console.log(props);
-    const { name, img, service, cost } = props.doctor;
+const Doctor = ({ doctor }) => {
+    const { name, img, service, cost, key } = doctor;
     return (
         <div className="col-lg-4 col-md-6">
             <Card>
@@ -14,7 +14,9 @@ const Doctor = (props) => {
                         Speciality: {service} <br />
                         Consultation Fee: ${cost}
                     </Card.Text>
-                    <Button variant="primary">Details</Button>
+                    <Link to={`/appointment/${key}`}>
+                        <Button variant="warning">Appoint {name}</Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </div>

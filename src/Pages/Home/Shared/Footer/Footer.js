@@ -1,5 +1,4 @@
 import React from 'react';
-import icon from '../../../Images/icon.png';
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +8,7 @@ const Footer = () => {
     const iconElement1 = <FontAwesomeIcon icon={faEnvelope} />
     const iconElement2 = <FontAwesomeIcon icon={faPhoneAlt} />
     return (
-        <div className="footer mt-5">
+        <div className="footer">
             <div className="aboutUs-container p-2">
                 <div className="row">
                     <div className="col-lg-4 col-md-6">
@@ -42,7 +41,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="right-container">
-                    <p>All Right Reserved &copy;Md. Redun 2021</p>
+                    <p>All Right Reserved &copy; Md. Redun 2021</p>
                 </div>
             </div>
         </div>
