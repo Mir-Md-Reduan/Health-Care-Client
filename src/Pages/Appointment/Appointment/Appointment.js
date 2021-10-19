@@ -14,7 +14,7 @@ const Appointment = () => {
     console.log(ExactData);
 
     return (
-        <div className="appointment-container">
+        <div className="my-5">
             <h1>This is service Detail Page </h1>
             <p>
                 Name : {ExactData?.name} <br />

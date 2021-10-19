@@ -26,7 +26,7 @@ const Login = () => {
     };
 
     return (
-        <div className="div d-flex justify-content-center align-items-center">
+        <div className="div d-flex justify-content-center align-items-center my-5">
             <div className="row ">
                 <div className="col-md-6">
                     <div>
@@ -36,6 +36,7 @@ const Login = () => {
                                 className="mt-2 p-2"
                                 type="email"
                                 placeholder="Email"
+                                required
                             />
                             <br />
                             <input
@@ -43,6 +44,7 @@ const Login = () => {
                                 className="mt-2 p-2"
                                 type="password"
                                 placeholder="Password"
+                                required
                             />
                             <br />
                             <div className="login-regiater-btn mt-4">
@@ -67,11 +69,11 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 my-5">
                     <div className="right-side-image">
                         <img
                             className="w-100"
-                            src="https://i.ibb.co/MSBbLcd/access-control-system-abstract-concept-illustration-security-system-authorize-entry-login-credential.jpg"
+                            src={BannerImage}
                             alt=""
                         />
                     </div>
