@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Doctor = ({ doctor }) => {
-    const { name, img, service, cost, key } = doctor;
+    const { name, img, service, cost, id } = doctor;
     return (
         <div className="col-lg-4 col-md-6">
             <Card>
@@ -14,7 +14,7 @@ const Doctor = ({ doctor }) => {
                         Speciality: {service} <br />
                         Consultation Fee: ${cost}
                     </Card.Text>
-                    <Link to={`/appointment/${key}`}>
+                    <Link to={`/appointment/${id}`}>
                         <Button variant="warning">Appoint {name}</Button>
                     </Link>
                 </Card.Body>

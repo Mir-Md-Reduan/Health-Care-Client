@@ -1,13 +1,29 @@
-import React from 'react';
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Appointment = () => {
     const { appointmentId } = useParams();
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch('/doctors.json')
+            .then(res => res.json())
+            .then(data => setData(data))
+    }, []);
+
+    const ExactData = data.filter(dat => dat.id.toString === appointmentId);
+    console.log(ExactData);
+
     return (
-        <div>
-            <h2>THis is appointment {appointmentId}</h2>
+        <div className="appointment-container">
+            <h1>This is service Detail Page </h1>
+            <p>
+                Name : {ExactData?.name} <br />
+                price : {ExactData?.cost} <br />
+                description : {ExactData?.description}
+            </p>
         </div>
     );
 };
+
 
 export default Appointment;

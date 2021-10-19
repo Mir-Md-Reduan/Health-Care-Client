@@ -4,9 +4,9 @@ import AuthProvider from './Context/AuthProvider';
 import Appointment from './Pages/Appointment/Appointment/Appointment';
 import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/Home/NotFound/NotFound';
-import Footer from './Pages/Home/Shared/Footer/Footer';
 import Header from './Pages/Home/Shared/Header/Header';
 import Login from './Pages/Home/Shared/Login/Login/Login';
+import PrivateRoute from './Pages/Home/Shared/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -19,15 +19,15 @@ function App() {
             <Route exact path='/'>
               <Home></Home>
             </Route>
-            <Route path='/home'>
+            <Route exact path='/home'>
               <Home></Home>
             </Route>
-            <Route path='/login'>
+            <Route exact path='/login'>
               <Login></Login>
             </Route>
-            <Route path='/appointment/:appointmentId'>
+            <PrivateRoute exact path='/appointment/:appointmentId'>
               <Appointment></Appointment>
-            </Route>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>
