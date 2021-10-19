@@ -8,15 +8,15 @@ const Header = () => {
         <div>
             <Navbar bg="light" expand="lg" fixed="top" >
                 <Container>
-                    <div href="#home" className="d-flex justify-content-center align-items-center"><img height="25px" width="25px" src={icon} alt="Icon" />&nbsp;Medicare</div>
+                    <img height="25px" width="25px" src={icon} alt="Icon" />&nbsp;Medicare
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#about">About</Nav.Link>
-                            <Nav.Link href="#doctors">Doctors</Nav.Link>
-                            <Nav.Link href="#contact">Contact</Nav.Link>
-                            <Nav.Link href="#login">Login</Nav.Link>
+                            <Nav.Link className="header-link" href="#home">Home</Nav.Link>
+                            <Nav.Link className="header-link" href="#doctors">Doctors</Nav.Link>
+                            <Nav.Link className="header-link" href="#about">About</Nav.Link>
+                            <Nav.Link className="header-link" href="#contact">Contact</Nav.Link>
+                            <Nav.Link className="header-link mb-5" href="#login">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
