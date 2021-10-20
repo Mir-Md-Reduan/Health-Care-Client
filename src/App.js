@@ -5,8 +5,9 @@ import Appointment from './Pages/Appointment/Appointment/Appointment';
 import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/Home/NotFound/NotFound';
 import Header from './Pages/Home/Shared/Header/Header';
-import Login from './Pages/Home/Shared/Login/Login/Login';
+import LoginAndRegister from './Pages/Home/Shared/Login/LoginAndRegister/LoginAndRegister';
 import PrivateRoute from './Pages/Home/Shared/Login/PrivateRoute/PrivateRoute';
+
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
               <Home></Home>
             </Route>
             <Route exact path='/login'>
-              <Login></Login>
+              <LoginAndRegister></LoginAndRegister>
             </Route>
             <PrivateRoute exact path='/appointment/:appointmentId'>
               <Appointment></Appointment>

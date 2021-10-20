@@ -1,84 +1,58 @@
-import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import useAuth from '../../../../../Hooks/useAuth';
-import BannerImage from '../../../../../Images/Login.jpg'
+import './Login.css'
+
 
 const Login = () => {
-    const { signInUsingGoogle,
-        user, handleUserRegister,
-        handleUserLogin, } = useAuth();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const hanldeEmail = (e) => {
-        setEmail(e.target.value);
-    };
-    const hanldePassword = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const handleRegister = () => {
-        handleUserRegister(email, password);
-    };
-
-    const handleLogin = () => {
-        handleUserLogin(email, password);
-    };
+    const { signInUsingGoogle, user,
+        handleUserLogin, signInUsingGithub, handleEmailChange, handlePasswordChange } = useAuth();
 
     return (
-        <div className="div d-flex justify-content-center align-items-center my-5">
-            <div className="row ">
-                <div className="col-md-6">
-                    <div>
-                        <div className="form-input mt-5">
-                            <input
-                                onChange={hanldeEmail}
-                                className="mt-2 p-2"
-                                type="email"
-                                placeholder="Email"
-                                required
-                            />
-                            <br />
-                            <input
-                                onChange={hanldePassword}
-                                className="mt-2 p-2"
-                                type="password"
-                                placeholder="Password"
-                                required
-                            />
-                            <br />
-                            <div className="login-regiater-btn mt-4">
-                                <button
-                                    onClick={handleRegister}
-                                    className="btn btn-primary me-1"
-                                >
-                                    Register
-                                </button>
-                                <button onClick={handleLogin} className="btn btn-success ms-1">
-                                    Login
-                                </button>
-                            </div>
-                        </div>
-                        <div className="login-btn mt-4">
-                            <button
-                                onClick={signInUsingGoogle}
-                                className="btn btn-warning m-2"
-                            >
-                                google sign in
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 my-5">
-                    <div className="right-side-image">
-                        <img
-                            className="w-100"
-                            src={BannerImage}
-                            alt=""
+        <div className="login-box d-flex align-items-center justify-content-center my-2 py-3">
+            <div className="login">
+                <div className="login-box">
+                    <h2 className="text-success">Please Login</h2>
+                    <p className="text-danger">{user.error}</p>
+                    <form onSubmit={handleUserLogin}>
+                        <input
+                            onChange={handleEmailChange}
+                            className="input-felid"
+                            type="email"
+                            name="email"
+                            placeholder="Enter your Email"
+                            required
                         />
+                        <br />
+                        <br />
+                        <input
+                            onChange={handlePasswordChange}
+                            className="input-felid"
+                            type="password"
+                            name="password"
+                            placeholder="Enter your Password"
+                            required
+                        />
+                        <br />
+
+                        <input
+                            className="mt-3 w-50 btn btn-success m-auto"
+                            type="submit"
+                            value="Login"
+                        />
+                        <br />
+
+                    </form>
+                    <div className="d-flex flex-wrap me-1  ">
+                        <Button onClick={signInUsingGoogle} className="mt-2 mx-auto text-warning w-75 " >
+                            Login with Google
+                        </Button>
+                        <Button onClick={signInUsingGithub} className="mt-2 mx-auto text-warning w-75 " >
+                            Login with Github
+                        </Button>
                     </div>
-                    ;
                 </div>
+
             </div>
         </div>
     );
