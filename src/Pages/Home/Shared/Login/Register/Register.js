@@ -3,13 +3,14 @@ import './Register.css';
 import useAuth from '../../../../../Hooks/useAuth';
 
 const Register = () => {
-    const { handleEmailChange, handlePasswordChange, handleUserRegister } = useAuth();
+    const { handleEmailChange, handlePasswordChange, handleUserRegister, error } = useAuth();
     return (
         <div>
             <div className="login-box d-flex align-items-center justify-content-center my-5 py-3">
                 <div className="login">
                     <div className="login-box">
                         <h2 className="text-success">Please Register</h2>
+                        <p className="text-danger">{error}</p>
                         <br />
                         <form onSubmit={handleUserRegister} >
                             <input

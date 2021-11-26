@@ -15,18 +15,18 @@ const Header = () => {
                     <img height="25px" width="25px" src={icon} alt="Icon" />&nbsp;Medicare
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
+                        <Nav className="ms-auto text-success">
                             <Nav.Link as={HashLink} className="header-link" to="/home#home">Home</Nav.Link>
                             <Nav.Link as={HashLink} className="header-link" to="/home#doctors">Doctors</Nav.Link>
                             <Nav.Link as={HashLink} className="header-link" to="/home#about">About</Nav.Link>
-                            <Nav.Link as={HashLink} className="header-link" to="/homenpm#contact">Contact</Nav.Link>
+                            <Nav.Link as={HashLink} className="header-link" to="/home#contact">Contact</Nav.Link>
+                            <Navbar.Text>
+                                <a href="#login">{user?.displayName}</a>
+                            </Navbar.Text>
                             {
                                 user?.email ?
                                     <Button onClick={logOut} variant="light">LogOut</Button> :
                                     <Nav.Link as={Link} to="/login">Login</Nav.Link>}
-                            <Navbar.Text>
-                                Log in as: <a href="#login">{user?.displayName}</a>
-                            </Navbar.Text>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -5,7 +5,8 @@ import './Login.css'
 
 const Login = () => {
 
-    const { signInUsingGoogle, user,
+
+    const { signInUsingGoogle,
         handleUserLogin, signInUsingGithub, handleEmailChange, handlePasswordChange } = useAuth();
 
     return (
@@ -13,7 +14,6 @@ const Login = () => {
             <div className="login">
                 <div className="login-box">
                     <h2 className="text-success">Please Login</h2>
-                    <p className="text-danger">{user.error}</p>
                     <form onSubmit={handleUserLogin}>
                         <input
                             onChange={handleEmailChange}
@@ -36,6 +36,7 @@ const Login = () => {
                         <br />
 
                         <input
+
                             className="mt-3 w-50 btn btn-success m-auto"
                             type="submit"
                             value="Login"

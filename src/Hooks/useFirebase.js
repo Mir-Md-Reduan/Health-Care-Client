@@ -38,9 +38,11 @@ const useFirebase = () => {
             if (user) {
                 setUser(user);
             } else {
-                setUser({})
+                setUser({});
+                setError('');
             }
             setIsLoading(false);
+
         });
         return () => unsubscribed;
     }, []);
@@ -63,18 +65,20 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
-                verifyEmail(email);
             })
+            .catch((error) => setError(error.message))
             .finally(() => setIsLoading(false));
     };
 
     const handleUserLogin = (e) => {
         e.preventDefault();
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
             })
             .catch((error) => setError(error.message))
+            .finally(() => setIsLoading(false));
     };
 
 
@@ -85,10 +89,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const verifyEmail = (email) => {
-        sendEmailVerification(auth.currentUser)
-            .then(() => { });
-    }
+
     return {
         user,
         isLoading,
@@ -98,7 +99,8 @@ const useFirebase = () => {
         handleUserLogin,
         signInUsingGithub,
         handleEmailChange,
-        handlePasswordChange
+        handlePasswordChange,
+        error
     }
 }
 
